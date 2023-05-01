@@ -1,8 +1,5 @@
 .helper-button {
-	height: 300px;
-	width: 300px;
-	background-color: red;
-	position: fixed;
-	top: 1px;
-	right: 1px;
+    position: fixed;
+    top: 10vw;
+    right: 10px;
 }
