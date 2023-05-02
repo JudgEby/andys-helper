@@ -7,6 +7,7 @@
 <script lang='ts'>
 import {defineComponent} from 'vue'
 import LocalStore from "../localStore";
+import {base64logo} from './logo'
 import StorageChange = chrome.storage.StorageChange;
 
 interface LocalStoreChangesI {
@@ -20,7 +21,7 @@ export default defineComponent({
             showButton: false,
             waitModalOpen: 500,
             waitModalClose: 500,
-            buttonImgUrl: chrome.runtime.getURL("img/logo-48.png")
+            buttonImgUrl: base64logo
         }
     },
     created() {
