@@ -1,9 +1,10 @@
 import {defineManifest} from '@crxjs/vite-plugin'
+import {getAllowedPages} from './utils/allowdPages'
 
 export default defineManifest({
   name: 'Andy Helper',
   description: '',
-  version: '1.0.0',
+  version: '1.1',
   manifest_version: 3,
   icons: {
     16: 'img/logo-16.png',
@@ -22,7 +23,7 @@ export default defineManifest({
   },
   content_scripts: [
     {
-      matches: ['https://wifi-iot.com/p/esp32/'],
+      matches: getAllowedPages(),
       js: ['src/content/index.ts'],
     },
   ],

@@ -1,12 +1,11 @@
 <template>
     <b-button v-show="showButton" pill class="helper-button" @click.prevent="clickHandler" :disabled="loading">
-        <img :src="url" alt="Go" class="image">
+        <img :src="buttonImgUrl" alt="Go" class="image">
     </b-button>
 </template>
 
 <script lang='ts'>
 import {defineComponent} from 'vue'
-import {base64logo} from './logo'
 import LocalStore from "../localStore";
 import StorageChange = chrome.storage.StorageChange;
 
@@ -21,7 +20,7 @@ export default defineComponent({
             showButton: false,
             waitModalOpen: 500,
             waitModalClose: 500,
-            url: base64logo
+            buttonImgUrl: chrome.runtime.getURL("img/logo-48.png")
         }
     },
     created() {
